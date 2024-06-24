@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cozy Notes</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Cozy Notes</h1>
+        </header>
+
+        <section class="note-container">
+            <div class="notes" id="notes">
+                <!-- Notes will be dynamically added here -->
+            </div>
+            <div class="add-note">
+                <textarea id="noteInput" rows="4" placeholder="Write your note here..."></textarea>
+                <button onclick="addNote()">Add Note</button>
+            </div>
+        </section>
+
+        <footer>
+            <button class="add-button" onclick="toggleNoteInput()">+</button>
+        </footer>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.4.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.4.0/firebase-firestore.js"></script>
+
+    <!-- Initialize Firebase -->
+    <script>
+        const firebaseConfig = {
+             apiKey: "AIzaSyB7BzRvc5ETesA5WbMameKpz6_j__YJGf0",
+             authDomain: "notesstickforever.firebaseapp.com",
+             projectId: "notesstickforever",
+             storageBucket: "notesstickforever.appspot.com",
+             messagingSenderId: "847469696370",
+             appId: "1:847469696370:web:1ead4fa0c02ef382dcb9eb",
+        };
+        
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+    </script>
+
+    <!-- Your custom JavaScript -->
+    <script src="notes.js"></script>
+</body>
+</html>
